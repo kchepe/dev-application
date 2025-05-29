@@ -1,0 +1,11 @@
+# TASK 1: Code Cleanup
+
+In this approach, I focused on making the data fetching and display process clean, user-friendly, and easy to manage. I started by setting up state to track both the loading status and the response from the API. When the component mounts, I trigger a fetch call using `useEffect` and store the result in a structured format using utility functions like `successResponse` and `errorResponse`. These helpers ensure that the data is always wrapped in a consistent shape, whether the request succeeds or fails. While the data is loading, I show a placeholder to keep the user informed. If something goes wrong or there’s no data, I return clear feedback using the same placeholder component. Once the data is available, I display up to five posts in a responsive grid layout.
+
+# TASK 2: Data List with Search
+
+In this approach, I built a simple and responsive user filtering component that lets users search through a list by name, email, or role. I used `useState` to track the search input and `useMemo` to efficiently compute the filtered list of users only when the input changes. To keep the search flexible, I made it case-insensitive and checked for matches across multiple fields. I also handled the edge case where the search input is empty by showing all users. When no matching users are found, I show a placeholder component for better user feedback. Each user's basic info is presented in a clean layout with a visual avatar based on the first letter of their name.
+
+# TASK 3: Simple Countdown Timer
+
+In this component, I created a simple countdown timer that starts from a fixed value (10 seconds) and counts down to zero. I used `useState` to manage both the countdown value and a flag (`shouldStart`) to control whether the timer is running. The `useEffect` hook handles the actual countdown logic — once the timer is active, it decreases the counter every second using `setInterval`. When the counter reaches zero, I automatically stop the timer to prevent it from running into negative numbers. I also made sure to clean up the interval on every update to avoid memory leaks. The interface updates in real time, showing the current countdown or "Done!" once it hits zero. A button is shown when the countdown is not active, allowing users to either start or reset the timer based on its state.
